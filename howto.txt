@@ -1,0 +1,7 @@
+ganze Datenbank via mysql exportiert.
+in der datei php.ini den Wert upload_max_filesize = 10M gesetzt
+neue Datenbank erstellt & importiert
+Eintrag geändert in neuer Datenbank: wp_options von http://www.baselcitykubb.ch zu localhost
+localhost/wp-admin aufgerufen - hat etwas an der db verändert
+nun läuft die online DB auf dem lokalen MAMP
+in den wp-einstellungen -> allgemein -> Website-Adresse (URL) auf localhost geändert

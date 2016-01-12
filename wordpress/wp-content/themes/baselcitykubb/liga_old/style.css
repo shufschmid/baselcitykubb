@@ -1,0 +1,201 @@
+/*
+Theme Name: Novelti Child
+Description: Child theme for the Novelti theme 
+Author: Samuel Hufschmid
+Template: novelti
+*/
+
+@import url("../novelti/style.css");
+
+
+/*
+Willkommen beim benutzerdefinierten CSS!
+
+CSS (Cascading Style Sheets) ist eine Art Code, der dem Browser sagt, wie
+eine Webseite dargestellt werden soll. Du kannst diese Kommentare löschen
+und mit deinen Anpassungen beginnen.
+
+Als Standard wird dein Stylesheet nach den Theme-Stylesheets geladen, das
+heißt, dass deine Regeln Vorrang haben und die Theme-CSS-Regeln
+überschreiben können. Schreibe einfach hier rein, was du ändern
+möchtest, du musst nicht den gesamten Stylesheet-Inhalt deines Themes
+kopieren.
+*/
+/* --------------------------------------------
+  600 - 799
+-------------------------------------------- */
+@media screen and (min-width: 600px) and (max-width: 799px) {
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	.wrapper {
+		max-width: 100%;
+	}
+	
+	.header-baner {
+		width: 100%;
+		height: auto;
+	}
+}
+
+/* --------------------------------------------
+  450 - 599
+-------------------------------------------- */
+@media screen and (min-width: 470px) and (max-width: 599px) {
+	html {
+		-webkit-text-size-adjust: none;
+	}
+	
+	.wrapper {
+		max-width: 100%;
+	}
+	
+	.header-baner {
+		width: 100%;
+		height: auto;
+	}
+}
+
+@media only screen and (max-width: 469px) {
+	.wrapper {
+		max-width: 100%;
+	}
+	
+	.header-baner {
+		width: 100%;
+		height: auto;
+	}
+}
+
+div.home-photoghy-header {
+	display: none;
+}
+
+.single-top-title {
+	display: none;
+}
+
+div.design-home-images-one-img {
+	display: inline;
+}
+
+.one-cat-top {
+	height: 100% !important;
+}
+
+.single-content .design-home-images-one .design-home-images-one-img {
+	width: 100% !important;
+	height: 100% !important;
+	display: inline !important;
+}
+
+div.work-slider {
+	display: none;
+}
+
+div.header {
+	display: none;
+}
+
+div.design-home-images-one-category {
+	background: #cce8d2 !important;
+}
+
+.design-home-images-one-category ul li p {
+	color: black !important;
+}
+
+.design-home-images-one-category ul li a {
+	color: black !important;
+}
+
+.design-home-images-one-title a {
+	font-weight: bold;
+}
+
+.design-home-images-one-title span {
+	font-weight: bold;
+}
+
+.sd-content ul li {
+	display: inline-block !important;
+	width: auto !important;
+}
+
+.sd-content ul {
+	padding: 0 !important;
+	margin: 0 0 .7em !important;
+	list-style: none !important;
+}
+
+.shortcodes ul li {
+	width: auto !important;
+}
+
+div.crp_related h3 {
+	margin: 0 0 1em;
+	display: inline-block;
+	line-height: 1.2;
+	font-size: 9pt;
+	font-weight: 700;
+}
+
+div.footer left {
+	background-color: #cce8d2 !important;
+}
+
+div.footer_box {
+	display: none !important;
+}
+
+.footer {
+	border-top: 0 !important;
+	padding: 0 !important;
+}
+
+.footer-copyright {
+	background-color: #cce8d2 !important;
+}
+
+.footer-copyright-text p {
+	color: black !important;
+	opacity: 100%;
+}
+
+
+.big-button-menu {display:none!important}
+.comment-images {
+	width: 100px;
+	height: 146px;
+}
+
+.comment-start-title {
+	width: 85%;
+}
+
+.comment-start-text {
+	width: 75%;
+	margin-left: 25px;
+}
+
+.wp-user-avatar-original {
+	width: 30px;
+	padding: 1px;
+}
+.meinetextbox {
+    background-color:#EEEEF2 ;
+    border: 1px solid #000000;
+    float: right; 
+    margin: 10px;
+    width: 200px;
+}
+.meinetextbox_title {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 7px;
+}
+.meinetextbox_inhalt {
+    padding: 10px;
+}
