@@ -5,10 +5,7 @@
 ?>
 <script src="<?php bloginfo('template_directory'); ?>/inc/js/jquery.li-scroller.1.0.js"></script>
 <ul id="ticker01">
-    <li><span>10/10/2007</span><a href="#">The first thing ...</a></li>
-    <li><span>10/10/2007</span><a href="#">End up doing is ...</a></li>
-    <li><span>10/10/2007</span><a href="#">The code that you ...</a></li>
-    <!-- eccetera -->
+    <?php include(get_template_directory()."/ticker.txt");?>
 </ul>
 
 

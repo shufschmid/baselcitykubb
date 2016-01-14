@@ -1,14 +1,5 @@
 === Probleme 11.1.2016
 
-Mamp: Bilder hochladen, ticker.txt schreiben - geht nicht
-smartphone welche ip?
-
-best practice:
-wie baut man externe css-dateien ein? wenn sie nicht überall gebaucht werden?
-und wie javascript-files?
-github - nochmals. fork?
-
-header:
 immer sichtbar, auch wenn eingeloggt
 ticker: wechseln, wenn sure shot (daten aus mysql-db)
 

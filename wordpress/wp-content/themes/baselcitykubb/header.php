@@ -27,10 +27,10 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'baselcitykubb' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
-		<div class="site-branding">
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+		<div class="site-branding<?php if ( is_admin_bar_showing() ) { ?> wp-toolbar-active<?php } ?>">
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 
-            <?php get_template_part( 'template-parts/content-liga-ticker');?></p>
+            <?php get_template_part( 'template-parts/content-liga-ticker');?></div>
 			</div><!-- .site-branding -->
     </header><!-- #masthead -->
 

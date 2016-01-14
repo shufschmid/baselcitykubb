@@ -54,25 +54,39 @@ body{
     margin:0px;
     background-color: white;
 }
-.site-header{
-    width:100%;
-    position:fixed;
-    top:-4px;
-    z-index: 10;
-}
+div.site-title{
+    margin-left: 36px;
+    margin-top: 19px;
 
-p.site-title a {
-    margin-left: 40px;
+}
+div.site-title a {
     text-decoration: none;
     font-weight: bold;
 }
-p.site-title{
-    position:fixed;
+.site-branding{
+    position: fixed;
+    z-index: 99999999999;
     background-color: white;
-    width:500px;
-    margin-top:4px;
+    width:100%;
+    top:-4px;
+    height:40px;
 }
-h2.entry-title a, h1.entry-title a{
+.tickercontainer { /* the outer div with the black border */
+    position: relative;
+    width:100%;
+    left:-40px;
+    top:-29px;
+}
+.tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
+    position: relative;
+    left: 140px;
+    top: -29px;
+    width: 320px;
+    overflow: hidden;
+}
+
+
+.entry-title a{
     text-decoration:none;
     color:black;
 }
@@ -82,11 +96,18 @@ h2.entry-title, h1.entry-title{
     margin-bottom:2px;
     line-height:1;
 }
-
-.morph-main-menu-button-wrapper {
-    margin-top:4px;
-    top: -8px;
+h3.entry-title{
+    font-size: 12pt;
+    line-height:1;
+    padding-bottom: 4px;
 }
+
+.attachment-150x300{
+    float:left;
+    padding-right:4px;
+    padding-bottom: 4px;
+}
+
 div.site{
     max-width:500px;
     margin:4px;

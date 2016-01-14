@@ -80,7 +80,8 @@ get_header(); ?>
                     <?php
                     $ticker .= "<li><span>".substr($letztesspiel[0], 0, 7)."</span><a href=\"liga/\">".$letztesspiel[1]." vs. ".$letztesspiel[2]." ".$letztesspiel[5].":".$letztesspiel[6]."</a></li>";
                 }
-                $file = 'ticker.txt';
+                $file = get_template_directory()."/ticker.txt";
+                echo $file;
                 file_put_contents($file, $ticker);
 
                 ?>
