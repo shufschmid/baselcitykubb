@@ -21,10 +21,18 @@ get_header(); ?>
     if ( have_posts() ) :
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
-            //funktioniert noch nicht: saubere Abfrage, ggf. über function mit rückgabewert $live ???
-            if( $wp_query->current_post == 0 && $live==false) {
-                //grosses Vorschaubild + Titel gross
-                get_template_part( 'template-parts/content_teaserbig');
+            //erster Eintrag
+            if( $wp_query->current_post == 0) {
+                //wenn der aktuellste Beitrag = "#kubblive" ist:
+                if($post->post_name == "kubblive"){
+                    ?><a class="twitter-timeline" href="https://twitter.com/hashtag/kubblive" data-widget-id="685860130982871041">#kubblive-Tweets</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                    <?php
+                    }
+                else{
+                    //grosses Vorschaubild + Titel gross
+                    get_template_part('template-parts/content_teaserbig');
+                }
             }
             //weitere Einträge anzeigen (aktuell: 2)
             elseif ($wp_query->current_post < 3){
@@ -32,7 +40,7 @@ get_header(); ?>
             }
             //swiper für kubbtour- & liga-statistiken
             elseif($wp_query->current_post == 3){
-                get_template_part( 'template-parts/liga_startseite');
+                get_template_part( 'template-parts/content_startseite_swiper');
             }
         endwhile;
 
@@ -40,6 +48,19 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', 'none' );
 
 	endif; ?>
+
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- baselcitykubb_2016 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-0452836655226597"
+             data-ad-test="on"
+             data-ad-slot="7417708037"
+             data-ad-format="auto"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
         <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLpEndZeRoN89bDThQltSufOM922v3vTeq" frameborder="0" allowfullscreen></iframe>
 	</main><!-- #main -->
 </div><!-- #primary -->

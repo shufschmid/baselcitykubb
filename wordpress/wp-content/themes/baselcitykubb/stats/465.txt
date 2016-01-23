@@ -1,0 +1,1 @@
+{"results":[{"name":"3. KCUA-CUP","points":"5","stage":"1\/16-Final","medal":"none","year":"2015","month":"8","day":"22"},{"name":"Fisi Kubb Open 2015","points":"3","stage":"1\/16-Final","medal":"none","year":"2015","month":"6","day":"27"},{"name":" KubbMAIster 2015","points":"4","stage":"1\/16-Final","medal":"none","year":"2015","month":"5","day":"30"}]}

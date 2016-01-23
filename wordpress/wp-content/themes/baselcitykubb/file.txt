@@ -1,0 +1,1 @@
+"results":[{"name":"FRIBOURG KUBB M3ETING 2015","points":"10","stage":"Viertelfinal","medal":"none","year":"2015","month":"8","day":"8"},{"name":"Trinamo 2015","points":"6","stage":"Achtelfinal","medal":"none","year":"2015","month":"6","day":"13"},{"name":"Kubb it Up VIII","points":"13","stage":"Achtelfinal","medal":"none","year":"2015","month":"5","day":"9"}]}

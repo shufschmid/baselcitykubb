@@ -108,7 +108,7 @@ get_header(); ?>
                                             ?>
                                             <tr>
                                                 <td>
-                                                    <?php echo $i; $i++;?>.
+                                                    <?php echo $i;?>.
                                                 </td>
                                                 <td>
                                                     <?php echo get_avatar( $ligaItem->id, 20 ); ?>
@@ -138,7 +138,15 @@ get_header(); ?>
                                                     </b></td>
                                             </tr>
 
-                                        <?php } };?>
+                                        <?php
+                                            if($i < 11){ $ranking_startseite .= "<tr><td class=\"ranking_cell\">".$i."</td><td class=\"ranking_cell\"><a href=\"http://localhost/?author=".$ligaItem->id."\">".substr($ligaItem->name, 0, 15)."</a></td><td class=\"ranking_cell\">".intval($ligaItem->elo)."</td></tr>";}
+                                            $i++;
+                                        }
+                                    };
+                                    $file_liga_ranking = get_template_directory()."/liga_ranking.txt";
+
+                                    file_put_contents($file_liga_ranking, $ranking_startseite);
+                                    ?>
                                     </tbody>
                                 </table>
 

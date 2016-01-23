@@ -7,6 +7,8 @@
  * @package baselcitykubb
  */
 
+
+
 /** Liga-Funktionen  */
 
 function berechnen($elo1, $elo2, $saetze1, $saetze2){
