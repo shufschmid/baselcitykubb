@@ -12,7 +12,7 @@
  * @package baselcitykubb
  */
 get_header(); ?>
-<div id="primary" class="content-area">
+<div id="primary" class="content-area<?php if ( is_admin_bar_showing() ) { ?> wp-toolbar-active<?php } ?>">
 	<main id="main" class="site-main" role="main">
     <?php
     //live - am Tag des Turniers wird ein spezifischer Twitter-Feed eingeblendet
@@ -34,12 +34,27 @@ get_header(); ?>
                     get_template_part('template-parts/content_teaserbig');
                 }
             }
+            //div einblenden für "weitere beiträge laden"
+            if($wp_query->current_post == 2){?>
+                <div style="clear:both;width:100%;text-align: center">
+                <a onclick="toggle_visibility('weiterebeitraege');">weitere Beiträge laden</a></div>
+                <div id="weiterebeitraege" style="display:none"><?php
+                }
             //weitere Einträge anzeigen (aktuell: 2)
-            elseif ($wp_query->current_post < 3){
+            elseif ($wp_query->current_post < 9){
                 get_template_part( 'template-parts/content_teasersmall');
             }
+            //versteckte elemente laden
             //swiper für kubbtour- & liga-statistiken
-            elseif($wp_query->current_post == 3){
+            elseif($wp_query->current_post == 9){
+                //Beiträge-Archiv-Link + div-element für versteckte beiträge schliessen
+                ?>
+                <div style="clear:both;width:100%;text-align: center">
+                    <a href="category/turnier-report/">Zum Archiv</a></div>
+                <div id="weiterebeitraege" style="display:none">
+                </div>
+                </div>
+                <?php
                 get_template_part( 'template-parts/content_startseite_swiper');
             }
         endwhile;
@@ -47,7 +62,11 @@ get_header(); ?>
 	else :
 		get_template_part( 'template-parts/content', 'none' );
 
-	endif; ?>
+	endif;
+
+    get_template_part('template-parts/kauftipp_kubbsets');
+    ?>
+
 
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- baselcitykubb_2016 -->

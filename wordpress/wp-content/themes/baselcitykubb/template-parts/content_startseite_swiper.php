@@ -3,6 +3,7 @@
     <div class="swiper-container">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
+
             <!-- Slides -->
             <div class="swiper-slide" style="background-color: #029DD6">
                 <span style="font-weight:bold;font-size:12pt;">Top 10: Kubbtour</span>
@@ -54,8 +55,8 @@
             prevButton: '.swiper-button-prev',
 
             // And if we need scrollbar
-            scrollbar: '.swiper-scrollbar',
-        })
+            scrollbar: '.swiper-scrollbar'
+        });
     </script>
 
 <?php

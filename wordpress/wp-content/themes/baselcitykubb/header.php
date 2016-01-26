@@ -18,7 +18,16 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/inc/css/swiper.min.css" type="text/css" media="screen" />
 <?php wp_head(); ?>
-
+<script type="text/javascript">
+    <!--
+    function toggle_visibility(id) {
+        var e = document.getElementById(id);
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+    }//-->
+</script>
 
 </head>
 
