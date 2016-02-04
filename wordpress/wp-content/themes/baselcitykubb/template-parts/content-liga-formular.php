@@ -28,7 +28,6 @@ if ( is_user_logged_in() ) {
         <input style="width:30px" type="number" name="resultat1"> : <input style="width:30px" type="number" name="resultat2">
         <br/><br/><input type="submit" name="submit" value="Resultat melden">
         <hr/></form>
-
 <?php
 }
 else {

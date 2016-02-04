@@ -78,7 +78,7 @@ if($turnier_id) {
         $index_anzeigen = 1;
         $punkte_zuvor = 0;
 
-        echo "<h4>Rangliste</h4><table>";
+        echo "<h3>Rangliste</h3><table>";
         foreach ($json_data["results"] as $data) {
             $index++;
             if ($data["points"] < $punkte_zuvor) {
@@ -117,10 +117,13 @@ $posttags = get_the_tags();
 $the_query = new WP_Query( 'tag='.$turnierslug );
 $index_archiv = 1;
 while ( $the_query->have_posts() ) : $the_query->the_post();
-    if($index_archiv == 1){
-        echo "<h4>".$turnierslug."-Turnierberichte aus dem Archiv:</h4>";
+    if($index_archiv == 2){
+        echo "<h3>Archiv: ".ucfirst($turnierslug)."</h3>";
     }
-    get_template_part('template-parts/content_teasersmall');
+    if($index_archiv > 1) {
+        get_template_part('template-parts/content_teasersmall');
+
+    }
     $index_archiv++;
 endwhile;
 wp_reset_postdata();

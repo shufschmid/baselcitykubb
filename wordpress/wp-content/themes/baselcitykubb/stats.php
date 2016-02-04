@@ -102,7 +102,7 @@ get_header(); ?>
         echo "<h2>Längste Durststrecke</h2>";
         echo "berücksichtigt werden Teams, die mind. 3 Turniere gespielt haben und aktuell über 30 Punkte in der Kubb-Tour-Rangliste vorweisen.<br><br>";
         ksort($durststrecke_winner);
-        $codefuerstartseite = "<table><tr><td class=\"ranking_cell\" style=\"font-weight:bolder;color:red;\">Längste Durststrecke:</td></tr>"; $indexstartseitewinner = 0;
+        $codefuerstartseite = "<table><tr><td colspan=\"3\" class=\"swipertitle\"><a href=\"stats/\">Statistiken</a></td></tr><tr><td class=\"ranking_cell\" style=\"font-weight:bolder;text-align: left;\">Längste Durststrecke:</td></tr>"; $indexstartseitewinner = 0;
         foreach($durststrecke_winner as $winner){
 
 
@@ -113,7 +113,7 @@ get_header(); ?>
             //echo floor($datediff/(60*60*24))." Tage: ".$teamnamenarray[$winner[0]] ."(".$winner[2].")<br>";
             echo "<b>".$teamnamenarray[$winner[0]]."</b>: ".floor($datediff/(60*60*24))." Tage (".$winner[2].")<br/>";
             if($indexstartseitewinner <2){
-                $codefuerstartseite .= "<tr><td class=\"ranking_cell\"><b>".substr($teamnamenarray[$winner[0]],0,17)."</b>: ".floor($datediff/(60*60*24))." Tage</td></tr>";
+                $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"text-align: left;\">&#160;&#160;&#160;<b>".substr($teamnamenarray[$winner[0]],0,10)."</b>: ".floor($datediff/(60*60*24))." Tage</td></tr>";
                 $indexstartseitewinner++;
             }
 
@@ -121,7 +121,7 @@ get_header(); ?>
 
         $startseite_stats = get_template_directory()."/startseite_stats.txt";
 
-        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;color:red;\">Heiss auf den 1. Sieg:</td></tr>";
+        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;text-align:left\">Heiss auf den 1. Sieg:</td></tr>";
 
         echo "<h2>Anzahl Finals und noch kein Sieg</h2>";
         arsort($silberteams);
@@ -130,7 +130,7 @@ get_header(); ?>
 
             echo $teamnamenarray[$key] . "(" . $silberteam . ")<br>";
             if($indexstartseiteheiss < 2){
-                $codefuerstartseite .= "<tr><td class=\"ranking_cell\"><b>".substr($teamnamenarray[$key],0,17)."</b> (".$silberteam." Finalniederlagen) </td></tr>";
+                $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"text-align: left;\">&#160;&#160;&#160;<b>".substr($teamnamenarray[$key],0,10)."</b>(".$silberteam." Finals) </td></tr>";
                 $indexstartseiteheiss++;
             }
         }
@@ -139,13 +139,13 @@ get_header(); ?>
         arsort($halbfinalteams);
         $indexstartseitehalbfinal = 0;
 
-        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;color:red;\">Heiss auf Final:</td></tr>";
+        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;text-align: left;\">Heiss auf Final:</td></tr>";
 
         foreach ($halbfinalteams as $key => $halbfinalteam) {
 
             echo $teamnamenarray[$key] . "(" . $halbfinalteam . ")<br>";
             if($indexstartseitehalbfinal < 1){
-                $codefuerstartseite .= "<tr><td class=\"ranking_cell\"><b>".substr($teamnamenarray[$key],0,17)."</b> (".$halbfinalteam." Halbfinals) </td></tr>";
+                $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"text-align: left;\">&#160;&#160;&#160;<b>".substr($teamnamenarray[$key],0,10)."</b> (".$halbfinalteam." HF) </td></tr>";
                 $indexstartseitehalbfinal++;
             }
         }
@@ -154,17 +154,18 @@ get_header(); ?>
         arsort($viertelfinalteams);
         $indexstartseiteviertelfinal = 0;
 
-        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;color:red;\">Heiss auf Halbfinal:</td></tr>";
+        $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"font-weight:bolder;text-align: left\">Heiss auf Halbfinal:</td></tr>";
 
         foreach ($viertelfinalteams as $key => $viertelfinalteam) {
 
             echo $teamnamenarray[$key] . "(" . $viertelfinalteam . ")<br>";
             if($indexstartseiteviertelfinal < 1){
-                $codefuerstartseite .= "<tr><td class=\"ranking_cell\"><b>".substr($teamnamenarray[$key],0,17)."</b> (".$viertelfinalteam." Viertelfinals) </td></tr>";
+                $codefuerstartseite .= "<tr><td class=\"ranking_cell\" style=\"text-align: left;\">&#160;&#160;&#160;<b>".substr($teamnamenarray[$key],0,10)."</b> (".$viertelfinalteam." VF) </td></tr>";
                 $indexstartseiteviertelfinal++;
             }
         }
-        $codefuerstartseite .= "<tr><td class=\"ranking_cell\">Mehr <a href=\"kubb-statistiken/\">Kubb-Statistiken</a></td></tr></table>";
+        //<tr><td class=\"ranking_cell credits\" colspan=\"3\"><a href=\"kubb-statistiken/\">Statistiken</a></td></tr>
+        $codefuerstartseite .= "</table>";
         file_put_contents($startseite_stats, $codefuerstartseite);
 
 

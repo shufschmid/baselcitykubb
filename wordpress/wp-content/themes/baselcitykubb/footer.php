@@ -14,11 +14,9 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'baselcitykubb' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'baselcitykubb' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'baselcitykubb' ), 'baselcitykubb', '<a href="http://underscores.me/" rel="designer">Samuel Hufschmid</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="site-info" style="width:100%;text-align: center;">
+        <span style="font-size: small;">&copy; baselcitykubb.ch 2016</span>
+    		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

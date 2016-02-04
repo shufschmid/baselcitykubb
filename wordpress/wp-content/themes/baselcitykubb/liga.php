@@ -32,13 +32,9 @@ get_header(); ?>
         }
 
         get_template_part( 'template-parts/content-liga-formular');
-
-
-
-        $ranking = getRanking($spiele, $current_user->id);
+        $ranking = getRanking( $spiele, $current_user->id);
         ?>
-
-            <table class="table table-striped table-condensed table-hover">
+            <table class="ligatable">
                 <caption>Die letzten Spiele</caption>
                 <?php
                 for ($spielezaehler = 1; $spielezaehler <= 10; $spielezaehler++){
@@ -81,13 +77,13 @@ get_header(); ?>
                     $ticker .= "<li><span>".substr($letztesspiel[0], 0, 7)."</span><a href=\"liga/\">".$letztesspiel[1]." vs. ".$letztesspiel[2]." ".$letztesspiel[5].":".$letztesspiel[6]."</a></li>";
                 }
                 $file = get_template_directory()."/ticker.txt";
-                echo $file;
+
                 file_put_contents($file, $ticker);
 
                 ?>
 
 
-                                <table class="table table-striped table-condensed table-hover">
+                                <table class="ligatable">
 
                                     <thead>
                                     <tr>

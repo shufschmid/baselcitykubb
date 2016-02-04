@@ -1,4 +1,4 @@
-<?php ?><table>
+<?php ?><table><tr><td colspan="3" class="swipertitle"><a href="http://kubbtour.ch/kubbtour.php">Kubbtour</a></td> </tr>
     <?php
     $json_data = file_get_contents("http://kubbtour.ch/inc_content/api_rank2.php?data=tour&year=0&view=json");
     $json_data = json_decode(substr($json_data,1,-3), true);
@@ -10,6 +10,7 @@
 
         if (++$index == 11) break;
     }
+    //<tr><td class="ranking_cell credits" colspan="3"><a href="http://www.kubbtour.ch/">kubbtour.ch</a></td></tr>
     ?>
-    <tr><td class="ranking_cell" colspan="3">powered by <a href="http://www.kubbtour.ch/">kubbtour.ch</a></td></tr>
+
 </table>

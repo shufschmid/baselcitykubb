@@ -35,13 +35,12 @@ get_header(); ?>
                 }
             }
             //div einblenden für "weitere beiträge laden"
-            if($wp_query->current_post == 2){?>
-                <div style="clear:both;width:100%;text-align: center">
-                <a onclick="toggle_visibility('weiterebeitraege');">weitere Beiträge laden</a></div>
+            if($wp_query->current_post == 3){?>
+                <button onclick="toggle_visibility('weiterebeitraege');" class="weiterebeitraege">weitere Beiträge laden</button>
                 <div id="weiterebeitraege" style="display:none"><?php
                 }
             //weitere Einträge anzeigen (aktuell: 2)
-            elseif ($wp_query->current_post < 9){
+            if ($wp_query->current_post > 0 && $wp_query->current_post < 9){
                 get_template_part( 'template-parts/content_teasersmall');
             }
             //versteckte elemente laden
@@ -49,8 +48,7 @@ get_header(); ?>
             elseif($wp_query->current_post == 9){
                 //Beiträge-Archiv-Link + div-element für versteckte beiträge schliessen
                 ?>
-                <div style="clear:both;width:100%;text-align: center">
-                    <a href="category/turnier-report/">Zum Archiv</a></div>
+                <button onclick="location.href='category/turnier-report/';" class="weiterebeitraege">Zum Artikel-Archiv</button>
                 <div id="weiterebeitraege" style="display:none">
                 </div>
                 </div>
@@ -64,7 +62,7 @@ get_header(); ?>
 
 	endif;
 
-    get_template_part('template-parts/kauftipp_kubbsets');
+    //get_template_part('template-parts/kauftipp_kubbsets');
     ?>
 
 
@@ -80,8 +78,7 @@ get_header(); ?>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
 
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLpEndZeRoN89bDThQltSufOM922v3vTeq" frameborder="0" allowfullscreen></iframe>
-	</main><!-- #main -->
+        </main><!-- #main -->
 </div><!-- #primary -->
 
 <?php

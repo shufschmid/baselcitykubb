@@ -49,7 +49,32 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-body{
+.swiper-container-horizontal>.swiper-pagination{
+    bottom:0px!important;
+}
+
+button.weiterebeitraege{
+    border-radius: .25em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    border-radius: .3em;
+    border-style: solid;
+    border-width: 1px;
+    color: #111;
+    display: inline-block;
+    font-family: avenir,helvetica,arial,sans-serif;
+    letter-spacing: .15em;
+    margin-bottom:4px;
+    padding: 1em .75em;
+    text-decoration: none;
+    text-transform: uppercase;
+    -webkit-transition: color .4s,background-color .4s,border .4s;
+    transition: color .4s,background-color .4s,border .4s;
+}
+body{font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     max-width:500px;
     margin:0px;
     background-color: white;
@@ -73,8 +98,8 @@ div.site-title a {
 }
 .tickercontainer { /* the outer div with the black border */
     position: relative;
-    width:500px;
-    left:-40px;
+    width:330px;
+    left:130px;
     top:-29px;
     height: 25px;
     margin: 0;
@@ -84,7 +109,7 @@ div.site-title a {
 }
 .tickercontainer .mask { /* that serves as a mask. so you get a sort of padding both left and right */
     position: relative;
-    left: 180px;
+    left: 4px;
     top: 6px;
     width: 500px;
     overflow: hidden;
@@ -99,13 +124,17 @@ div.site-title a {
 h2.entry-title, h1.entry-title{
     text-decoration:none;
     margin-top:0px;
-    margin-bottom:2px;
+    margin-bottom:15px;
     line-height:1;
 }
 h3.entry-title{
     font-size: 12pt;
     line-height:1;
+    margin-top:0px;
     padding-bottom: 4px;
+}
+h3{
+    margin-bottom:8px;
 }
 
 .attachment-150x300{
@@ -130,8 +159,14 @@ div.entry-content, div.entry-content p{
 }
 .swiper-container {
     width: 100%;
-    height: 278px;
+    height: 316px;
     margin-bottom: 4px;
+}
+.credits{
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: grey;
 }
 html {
 	font-family: sans-serif;
@@ -139,6 +174,11 @@ html {
 	-ms-text-size-adjust:     100%;
 }
 
+.attachment-150x75{
+    float:left;
+    margin-bottom:4px;
+    margin-right:4px;
+}
 
 /* von http://www.wpstuffs.com/youtube-videos-responsive-wordpress/ */
 .video-container {
@@ -491,8 +531,9 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1.5em 0;
 }
+
 
 ul {
 	list-style: disc;
@@ -643,10 +684,11 @@ a {
 	color: royalblue;
 }
 
-a:visited {
-	color: purple;
-}
 
+h1 a:visited,a {color:black;}
+h2 a:visited,a {color:black;}
+h3 a:visited,a {color:black;}
+h4 a:visited,a {color:black;}
 a:hover,
 a:focus,
 a:active {
@@ -887,7 +929,7 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 0;
 }
 
 .byline,
@@ -928,6 +970,14 @@ a:active {
 
 .bypostauthor {
 	display: block;
+}
+.comments-area{
+    padding-top:15px;
+}
+.comment-metadata a{
+    font-size: 8pt;
+    text-decoration: none;
+    color: grey;
 }
 
 /*--------------------------------------------------------------
@@ -1038,13 +1088,24 @@ object {
 /*--------------------------------------------------------------
 ## Table Styles
 --------------------------------------------------------------*/
+td.swipertitle {
+    background-color: blue;
+    font-weight: bold;
+    font-size: 12pt;
+    text-align: center!important;
+}
+td.ranking_cell a {
+    color:black!important;
+    font-weight: normal!important;
+}
+
 table a:link {
     color: #666;
     font-weight: bold;
     text-decoration:none;
 }
 table a:visited {
-    color: #999999;
+    color: #666;
     font-weight:bold;
     text-decoration:none;
 }
@@ -1098,7 +1159,6 @@ table tr {
     padding-left:0px;
 }
 table td:first-child {
-    text-align: left;
     padding-left:0px;
     border-left: 0;
 }
@@ -1137,7 +1197,9 @@ table tr:hover td {
 }
 
 td.ranking_cell {padding:2px;}
-
+table.ligatable td{
+    padding:0px;
+}
 
 /*--------------------------------------------------------------
 ## Ticker Styles

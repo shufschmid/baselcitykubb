@@ -3,8 +3,8 @@
 // Open the file to get existing content
 //$ticker = file_get_contents('ticker.txt');
 ?>
-<script src="<?php bloginfo('template_directory'); ?>/inc/js/jquery.li-scroller.1.0.js"></script>
-<ul id="ticker01">
+
+<ul id="ticker01" style="visibility:hidden">
     <?php include(get_template_directory()."/ticker.txt");?>
 </ul>
 
@@ -13,4 +13,6 @@
     jQuery(function($) {
             $("ul#ticker01").liScroll();
     });
-</script>
+    setTimeout(function(){document.getElementById('ticker01').style.visibility = 'visible';}, 1500);
+
+    </script>

@@ -8,7 +8,6 @@
  */
 
 
-
 /** Liga-Funktionen  */
 
 function berechnen($elo1, $elo2, $saetze1, $saetze2){
@@ -126,7 +125,7 @@ function getRanking($spiele, $X)
 
     foreach ($spiele as $spiel) {
         if($ranking[$spiel->spieler1]->elo == ""){
-            echo $spiel->spieler1;
+            //echo $spiel->spieler1;
         }
         $punkte = berechnen($ranking[$spiel->spieler1]->elo, $ranking[$spiel->spieler2]->elo, $spiel->resultat1, $spiel->resultat2);
 
@@ -377,6 +376,7 @@ function baselcitykubb_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+    wp_enqueue_script('ticker-script', get_template_directory_uri() . '/inc/js/jquery.li-scroller.1.0.js',array('jquery'),'1.1', false);
 }
 add_action( 'wp_enqueue_scripts', 'baselcitykubb_scripts' );
 

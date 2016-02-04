@@ -28,7 +28,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
                 ?>
 
-                    <table>
+                    <table class="ligatable">
                         <caption>Letzte Spiele</caption>
                         <?php
                         for ($spielezaehler = 1; $spielezaehler <= 10; $spielezaehler++){
@@ -67,7 +67,7 @@ $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : g
 
 
 
-                            <table id="angstgegner" class="table table-striped table-condensed table-hover">
+                            <table id="angstgegner" class="ligatable">
                                 <caption>Angst- / Lieblingsgegner</caption>
                                 <thead>
                                 <tr>
